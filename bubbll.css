@@ -22,25 +22,9 @@ section{
     align-items: center;
 
 
-}
-
-section::before
-{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    clip-path: polygon(54% 0, 100% 0, 100% 100%, 84% 100%);
-    animation: fade-in 0.5s ease-in forwards;
-    animation-delay: 1.5s;
-    opacity: 0;
+} 
 
 
-
-}
 
 section .content
 {
@@ -194,4 +178,36 @@ section .image img
     }
 
 
+}
+
+
+@media only screen  and (max-width:600px)
+    
+{
+    .menuicon
+    {
+        position: fixed;
+        top: 40px;
+        right: 40px;
+        width: 30px;
+        height: 30px;
+        background: url(menu.png);
+        filter: invert(1);
+        background-size: 30px;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        z-index: 1000;
+
+    }
+
+    .menuicon .active
+    {
+        background: url(close.png);
+        filter: invert(1);
+        background-size: 30px;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        z-index: 1000;
+    }
+    
 }
