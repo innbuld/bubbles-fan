@@ -1,11 +1,14 @@
- main
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300.400,600,700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300.400,600,700,800&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
 }
 
 body {
@@ -21,12 +24,14 @@ and gave it zindex to come on top of the main section's contents */
     z-index: 2;
     height: 50px;
     width: 50%;
+    max-width: max-content;
+    background: inherit;
 
     display: flex;
     justify-content: flex-start;
     align-items: center;
     border-left: 5px solid #ff2562;
-    padding-left: 15px;
+    padding-left: 10px;
 
     animation: left-in 0.5s ease-in forwards;
     animation-delay: 0s;
@@ -50,6 +55,14 @@ and gave it zindex to come on top of the main section's contents */
     color: #ff2562;
 }
 
+/* Menu Icon hidden by default coz of Desktop View*/
+.menuicon {
+    display: none;
+    z-index: 3;
+    filter: invert(1);
+    top: 8px;
+}
+
 /* Here, I let the main section container
 take the full width and height by default 
 (you've done it, i only added some stuffs) 
@@ -69,7 +82,7 @@ section {
 and the image will take the other 50%(simple maths lol)*/
 section .content {
     width: 50%;
-    padding: 60px;
+    padding: 40px;
 
     animation: left-in 0.5s ease-in forwards;
     animation-delay: 0.5s;
@@ -92,17 +105,14 @@ BubbleGoose Website Button
 in the Content Section.
 I added .more class */
 section .content .more {
-    position: relative;
-    display: inline-block;
-    padding: 15px 30px;
-    margin-top: 25px;
+    padding: 15px;
+    margin-top: 3rem;
     background: #ff2562;
     color: #fff;
-    text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.95em;
+    font-size: 1.2rem;
     font-weight: 700;
-    letter-spacing: 2px;
+    border-radius: 10px;
 }
 
 /* The Social Media links
@@ -110,7 +120,7 @@ I took them from where put them to the
 Content Section*/
 .content .sci {
     display: flex;
-    margin-top: 50px;
+    margin-top: 30px;
     animation: left-in 0.5s ease-in forwards;
     animation-delay: 1s;
     opacity: 0;
@@ -137,13 +147,14 @@ section .image {
 }
 
 section .image img {
+    width: 100%;
     max-width: 30rem;
     animation: fade-in 0.5s ease-in forwards;
     animation-delay: 2s;
     opacity: 0;
 }
 
-/* Your Animations 
+/* Your Animations
 (Untouched ) */
 @keyframes fade-in {
     0% {
@@ -167,255 +178,46 @@ section .image img {
     }
 }
 
-/* Media Queries*/
-@media only screen and (max-width:600px) {
+
+
+/* Media Queries */
+@media screen and (max-width:600px) {
+    /* Don't forget in the main section for desktop view
+    The flex-direction by default is set to row, so I changed it go Column in Mobile View */
+    section {
+        padding-top: 8rem;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    
+    /* I let the 2 sections takes 100% width and Height*/
+    section .content {
+        padding: 25px;
+        width: 100vw;
+    }
+
+    section .image img {
+        padding: 10px;
+        border-radius: 20px;
+        height: auto;
+        width: 100vw;
+    }
+
+    .nav {
+        display: none;
+        top: 3rem;
+    }
+
     .menuicon {
         position: fixed;
-        top: 40px;
-        right: 40px;
-        width: 30px;
-        height: 30px;
-        background: url(menu.png);
-        filter: invert(1);
-        background-size: 30px;
-        cursor: pointer;
-        background-repeat: no-repeat;
-        z-index: 1000;
-
+        right: 15px;
+        padding: 10px;
+        display: block;
     }
 
-    .menuicon:active {
-        background: url(close.png);
-        filter: invert(1);
-        background-size: 30px;
-        cursor: pointer;
-        background-repeat: no-repeat;
-        z-index: 1000;
+    .nav-active {
+        display: flex;
     }
 
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300.400,600,700,800&display=swap');
-
-*
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-
-
-
-
-}
-
-section{
-    position: relative;
-    widows: 100%;
-    min-height: 100vh;
-    background: rgb(40, 126, 154);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-
-} 
-
-
-
-section .content
-{
-    position: relative;
-    padding: 100px 50px 100px 150px;
-    box-sizing: border-box;
-    animation: left-in 0.5s ease-in forwards;
-    animation-delay: 0.5s;
-    opacity: 0;
-
-
-}
-
-section .content h1
-{
-    color: #fff;
-    font-size: 3em;
-    font-weight: 800;
-}
-
-section .content p
-{
-    color: white;
-    font-size: 1.2em;
-}
-
-section .content a
-{
-    position: relative;
-    display: inline-block;
-    padding: 15px 30px;
-    margin-top: 20px;
-    background: #ff2562;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.95em;
-    font-weight: 700;
-    letter-spacing: 2px;
-
-
-}
-
-section .image
-{
-    position: relative;
-    padding-right: 100px;
-}
-
-section .image img
-{
-    max-width: 500px;
-    animation: fade-in 0.5s ease-in forwards;
-    animation-delay: 2s;
-    opacity: 0;
-
-
-
-}
-
-.sci
-{
-    position: absolute;
-    bottom: 75px;
-    left: 150px;
-    display: flex;
-    animation: left-in 0.5s ease-in forwards;
-    animation-delay: 1s;
-    opacity: 0;
-
-}
-
-.sci li
-{
-    list-style: none;
-}
-.sci li a
-{
-    text-decoration: none;
-    color: #999;
-    margin-right: 30px;
-    font-size: 0.9em;
-
-}
-.sci li a:hover
-{
-    color: #ff2562;
-}
-
-.nav
-{
-    position: absolute;
-    top: 75px;
-    left: 150px;
-    display: flex;
-    border-left: 5px solid #ff2562;
-    padding-left: 20px;
-    animation: left-in 0.5s ease-in forwards;
-    animation-delay: 0s;
-    opacity: 0;
-
-}
-
-.nav li
-{
-    list-style: none;
-}
-.nav li a
-{
-    text-decoration: none;
-    color: #fff;
-    margin-right: 30px;
-    font-size: 0.9em;
-    text-transform: uppercase;
-    font-weight: 700;
-
-}
-
-.nav li a:hover
-{
-    color: #ff2562;
-}
-
-@keyframes fade-in
-{
-    0%
-    {
-        opacity:0;
-
-    }
-    100%
-    {
-        opacity: 1;
-    }
-
-
-}
-
-@keyframes left-in
-{
-    0%
-    {
-        transform: translateX(-200px);
-        opacity:0;
-
-    }
-    100%
-    {
-        transform: translateX(0px);
-        opacity: 1;
-    }
-
-
-}
-
-
-@media only screen  and (max-width:600px)
-    
-{
-    .menuicon
-    {
-        position: fixed;
-        top: 40px;
-        right: 40px;
-        width: 30px;
-        height: 30px;
-        background: url(menu.png);
-        filter: invert(1);
-        background-size: 30px;
-        cursor: pointer;
-        background-repeat: no-repeat;
-        z-index: 1000;
-
-    }
-
-   
-  
-    
-    .nav 
-    {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0, .95);
-        flex-direction: column;
-        z-index: 11;
-        border: none;
-        padding: 50px;
-    }
-    
-    .nav .active
-    {
-        left: 0;
-    }
-   main
 }

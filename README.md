@@ -1,1 +1,3 @@
-# bubbles-fan
+# Bubbles Fan Landing Page.
+
+Just designing 🚀.

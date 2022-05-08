@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
-    <title>Bubble Goose</title>
-    <link rel="stylesheet" type="text/css" href="bubbll.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GooseBubbles</title>
+    <link rel="stylesheet" href="bubbll.css">
 </head>
 
 <body>
@@ -15,38 +17,48 @@
         <li><a href="https://twitter.com/msbBozy">Everyday news</a></li>
     </ul>
 
-    <section class="main">
-        <div class="content">
-            <div>
-                <h1>Bubble Goose</h1>
-                <p>Bubblegoose Ballers collection is here to inspire us to fly high, live our lives to the fullest and to express ourselves freely.To be a Bubblegoose Baller is to be someone that takes risk, bets on themselves and overcomes odds</p>
-                <a class="more" href="#">BubbleGoose Website</a>
-                <br />
-                <br />
-                <ul class="sci">
-                    <li><a href="https://twitter.com/BubblegooseXYZ">Twitter</a></li>
-                    <li><a href="https://www.bubblegooseballers.xyz/">Main Website</a></li>
-                </ul>
-            </div>
-        </div>
+    <span class="menuicon" id="toggle" onclick="menuToggle()">
+        <img id="icon" src="menu.png" alt="hamburger" height="30px" width="40px" />
+    </span>
 
+    <section>
+        <div class="content">
+            <h1>Bubble Goose</h1>
+            <p>Bubblegoose Ballers collection is here to inspire us to fly high, live our lives to the fullest and to express ourselves freely.To be a Bubblegoose Baller is to be someone that takes risk, bets on themselves and overcomes odds</p>
+            <br />
+            <br />
+            <a class="more" href="#">BubbleGoose Website</a>
+            <br />
+
+            <ul class="sci">
+                <li><a href="https://twitter.com/BubblegooseXYZ">Twitter</a></li>
+                <li><a href="https://www.bubblegooseballers.xyz/">Main Website</a></li>
+            </ul>
+        </div>
         <div class="image">
             <img src="bble.jpg">
         </div>
-
     </section>
 
-    <span class="menuicon" id="toggle" onclick="menuToggle()"> </span>
-
     <script type="text/javascript">
+
         function menuToggle() {
             var nav = document.getElementById("nav");
-            nav.classList.toggle('active')
-            var toggle = document.getElementById("toggle");
-            toggle.classList.toggle('active')
-
+            nav.classList.toggle('nav-active')
+            
+            /* A function to toggle image src from StackOverflow
+            https://stackoverflow.com/questions/12225843/toggle-image-src-attribute-using-javascript
+            */
+            var icon = document.getElementById('icon').src;
+            if (icon.indexOf('menu.png') != -1) {
+                document.getElementById('icon').src = 'close.png';
+            }
+            else {
+                document.getElementById('icon').src = 'menu.png';
+            }
         }
     </script>
 
 </body>
+
 </html>
