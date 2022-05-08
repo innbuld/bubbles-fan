@@ -1,3 +1,199 @@
+ main
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300.400,600,700,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    font-size: 16px;
+}
+
+/* I let the nav to be fixed up there
+and gave it zindex to come on top of the main section's contents */
+.nav {
+    position: fixed;
+    top: 30px;
+    left: 15px;
+    z-index: 2;
+    height: 50px;
+    width: 50%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-left: 5px solid #ff2562;
+    padding-left: 15px;
+
+    animation: left-in 0.5s ease-in forwards;
+    animation-delay: 0s;
+    opacity: 0;
+}
+
+.nav li {
+    list-style: none;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 30px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nav li a:hover {
+    color: #ff2562;
+}
+
+/* Here, I let the main section container
+take the full width and height by default 
+(you've done it, i only added some stuffs) 
+*/
+section {
+    width: 100vw;
+    min-height: 100vh;
+    max-height: max-content;
+    background: rgb(40, 126, 154);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* So the contents takes 50% of the width 
+and the image will take the other 50%(simple maths lol)*/
+section .content {
+    width: 50%;
+    padding: 60px;
+
+    animation: left-in 0.5s ease-in forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+section .content h1 {
+    color: #fff;
+    font-size: 3em;
+    font-weight: 800;
+}
+
+section .content p {
+    color: white;
+    font-size: 1.2em;
+}
+
+/* This for the 
+BubbleGoose Website Button 
+in the Content Section.
+I added .more class */
+section .content .more {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 25px;
+    background: #ff2562;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.95em;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* The Social Media links
+I took them from where put them to the 
+Content Section*/
+.content .sci {
+    display: flex;
+    margin-top: 50px;
+    animation: left-in 0.5s ease-in forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    text-decoration: none;
+    color: #999;
+    font-size: 0.9em;
+}
+
+.sci li a:hover {
+    color: #ff2562;
+}
+
+
+/* The Image takes 50% of the width here too */
+section .image {
+    width: 50%;
+}
+
+section .image img {
+    max-width: 30rem;
+    animation: fade-in 0.5s ease-in forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+/* Your Animations 
+(Untouched ) */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes left-in {
+    0% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+/* Media Queries*/
+@media only screen and (max-width:600px) {
+    .menuicon {
+        position: fixed;
+        top: 40px;
+        right: 40px;
+        width: 30px;
+        height: 30px;
+        background: url(menu.png);
+        filter: invert(1);
+        background-size: 30px;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        z-index: 1000;
+
+    }
+
+    .menuicon:active {
+        background: url(close.png);
+        filter: invert(1);
+        background-size: 30px;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        z-index: 1000;
+    }
+
+
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300.400,600,700,800&display=swap');
 
 *
@@ -221,4 +417,5 @@ section .image img
     {
         left: 0;
     }
+   main
 }
