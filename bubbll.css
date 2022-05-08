@@ -132,13 +132,16 @@ Content Section*/
 
 .sci li a {
     text-decoration: none;
-    color: #999;
-    font-size: 0.9em;
+    font-size: 20px;
+    font-weight: 200;
+    color:black;
+    
 }
 
 .sci li a:hover {
     color: #ff2562;
 }
+
 
 
 /* The Image takes 50% of the width here too */
